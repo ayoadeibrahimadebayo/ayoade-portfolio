@@ -82,12 +82,24 @@ button { color: inherit; }
 .section-heading h2, .skills-heading h2 { margin: 0; color: var(--color-primary); font-size: clamp(2.4rem, 5vw, 4.35rem); font-weight: 600; letter-spacing: -.07em; line-height: 1.08; }
 .section-heading h2 span, .skills-heading h2 span { color: #969d9a; }
 
+body { background: radial-gradient(circle at top, rgba(77,76,191,.06), transparent 32%), var(--color-background); }
+
 .work-section { background: var(--color-surface-soft); }
 .work-heading, .skills-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
 .work-heading > p, .skills-heading > p { max-width: 290px; margin: 0 0 .35rem; color: var(--color-muted); font-size: .8rem; line-height: 1.75; }
 .project-grid { display: grid; gap: 2rem; }
-.project-card { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(2rem,6vw,6rem); min-width: 0; padding: clamp(1rem,3vw,2rem); border: 1px solid var(--color-line); border-radius: 18px; background: var(--color-surface); box-shadow: 0 18px 55px rgba(0,0,82,.045); }
+.mini-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.project-card { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(2rem,6vw,6rem); min-width: 0; padding: clamp(1rem,3vw,2rem); border: 1px solid var(--color-line); border-radius: 18px; background: var(--color-surface); box-shadow: 0 18px 55px rgba(0,0,82,.045); transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-3px); box-shadow: 0 22px 64px rgba(0,0,82,.08); }
+.project-card-mini { grid-template-columns: 1fr; gap: 1rem; padding: 1rem; }
+.project-card-mini .project-story { padding: 0; }
+.project-card-mini h3 { margin-top: .75rem; font-size: clamp(1.5rem,3vw,2.1rem); }
+.project-card-mini .project-summary { font-size: .76rem; }
+.project-card-mini .project-actions { margin-top: 1rem; }
 .project-image-link { position: relative; display: block; min-width: 0; aspect-ratio: 1.38; overflow: hidden; border-radius: 12px; background: #07060e; isolation: isolate; }
+.project-image-link-mini { aspect-ratio: 1.2; }
+.project-image-link-mini.project-image-link-screenshot { aspect-ratio: 1.2; background: #0b1028; }
+.project-image-link-mini.project-image-link-screenshot img { object-fit: contain; }
 .project-image-link img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .35s ease; }
 .project-image-overlay { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: 3.5rem 1.15rem 1.15rem; background: linear-gradient(transparent,rgba(0,0,30,.82)); color: #fff; font-size: .74rem; font-weight: 600; opacity: 0; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; }
 .project-image-icon { color: var(--color-accent); }
@@ -279,14 +291,6 @@ button { color: inherit; }
 .tutor-step h4 { margin: .45rem 0 .3rem; color: var(--color-primary); font-size: .72rem; }
 .tutor-step p { margin: 0; color: var(--color-muted); font-size: .61rem; line-height: 1.65; }
 .tutor-evidence-note { margin-top: 1rem; }
-.case-screens { padding-bottom: 5rem; }
-.screen-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.5rem; }
-.gallery-tile { min-width: 0; border: 1px solid var(--color-line); border-radius: 8px; background: #efeff3; }
-.gallery-tile img { width: 100%; height: 100%; max-height: 510px; object-fit: contain; transition: transform .4s ease; }
-.gallery-tile:hover img { transform: scale(1.025); }
-.gallery-tile > span { position: absolute; right: 0; bottom: 0; left: 0; padding: 1.9rem .75rem .65rem; background: linear-gradient(transparent,rgba(0,0,0,.72)); color: #fff; font-size: .57rem; }
-.gallery-wide { grid-column: span 2; background: #080710; }
-.gallery-wide img { max-height: 460px; object-fit: cover; }
 .learning-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.4rem 2rem; margin-top: 2rem; }
 .learning-grid article { padding-top: .9rem; border-top: 1px solid #dcdcd5; }
 .learning-grid article > span { font-size: .53rem; }
@@ -341,6 +345,7 @@ button { color: inherit; }
   .work-heading, .skills-heading { display: block; margin-bottom: 2.2rem; }
   .work-heading > p, .skills-heading > p { margin-top: 1rem; }
   .project-grid { gap: 1rem; }
+  .mini-projects { grid-template-columns: 1fr; }
   .project-card { grid-template-columns: 1fr; gap: 1.2rem; padding: .9rem; }
   .project-image-link { aspect-ratio: 1.22; }
   .project-image-overlay { opacity: 1; transform: none; }
@@ -395,9 +400,6 @@ button { color: inherit; }
   .tutor-journey { gap: .55rem; margin-top: 1.7rem; }
   .tutor-step-image { height: 205px; }
   .tutor-step > div { padding: .7rem .6rem .75rem; }
-  .screen-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; }
-  .gallery-wide { grid-column: span 2; }
-  .gallery-tile img { max-height: 380px; }
   .learning-grid { grid-template-columns: 1fr; }
   .case-next { padding-block: 3rem 4rem; }
   .image-lightbox { width: calc(100% - 1rem); padding: .65rem; }
@@ -410,7 +412,6 @@ button { color: inherit; }
   .hero-actions .button { flex: 1 1 0; min-width: 0; min-height: 46px; gap: .3rem; padding-inline: .5rem; font-size: .66rem; white-space: nowrap; }
   .footer-inner { flex-wrap: wrap; padding-block: 1rem; }
   .footer-inner p { order: 3; width: 100%; text-align: center; }
-  .gallery-tile img { max-height: 310px; }
 }
 
 @media (max-width: 350px) {
@@ -461,10 +462,9 @@ button { color: inherit; }
 [data-theme="dark"] .process-list li > span,
 [data-theme="dark"] .process-list em { color: #b6bac5; }
 [data-theme="dark"] .journey-node { border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.055); }
-[data-theme="dark"] .tutor-step,
-[data-theme="dark"] .gallery-tile { border-color: var(--color-line); background: #1c1e26; }
+[data-theme="dark"] .tutor-step { border-color: var(--color-line); background: #1c1e26; }
 [data-theme="dark"] .tutor-step-image,
-[data-theme="dark"] .gallery-tile:not(.gallery-wide) { background: #252733; }
+[data-theme="dark"] .project-image-link-screenshot { background: #0b1028; }
 [data-theme="dark"] .learning-grid article { border-color: var(--color-line); }
 [data-theme="dark"] .case-next { border-color: var(--color-line); }
 [data-theme="dark"] .site-footer { background: #08091d; }

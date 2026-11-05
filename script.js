@@ -73,17 +73,16 @@ const imageLightbox = document.querySelector("#image-lightbox");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
 const lightboxCount = document.querySelector("#lightbox-count");
-const screenGallery = document.querySelector("#screen-gallery");
-const galleryImages = screenGallery
-  ? Array.from(screenGallery.querySelectorAll(".gallery-trigger")).map((trigger) => {
-      const image = trigger.querySelector("img");
-      return {
-        src: image?.src ?? "",
-        alt: image?.alt ?? "",
-        caption: trigger.querySelector("span")?.textContent?.trim() ?? image?.alt ?? "",
-      };
-    })
-  : [];
+const galleryImages = Array.from(
+  document.querySelectorAll(".gallery-trigger[data-gallery-item]"),
+).map((trigger) => {
+  const image = trigger.querySelector("img");
+  return {
+    src: image?.src ?? "",
+    alt: image?.alt ?? "",
+    caption: image?.alt ?? trigger.querySelector("span")?.textContent?.trim() ?? "",
+  };
+});
 let activeGalleryIndex = 0;
 
 if (
