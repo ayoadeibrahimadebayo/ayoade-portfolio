@@ -34,7 +34,7 @@ button { color: inherit; }
 .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(38,49,56,.08); background: rgba(250,249,246,.94); backdrop-filter: blur(16px); }
 .nav-shell { min-height: 78px; display: flex; align-items: center; justify-content: space-between; }
 .wordmark { display: inline-flex; align-items: center; gap: .65rem; font-size: .9rem; font-weight: 700; letter-spacing: -.03em; }
-.wordmark-mark { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 50%; background: var(--color-primary); color: var(--color-accent); font-size: 1.25rem; letter-spacing: -.08em; }
+.wordmark-mark { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 50%; background: var(--color-primary); color: var(--color-background); font-size: 1.25rem; letter-spacing: -.08em; }
 .nav-links { display: flex; align-items: center; gap: clamp(1.25rem, 2.8vw, 2.5rem); color: var(--color-muted); font-size: .76rem; font-weight: 500; }
 .nav-links > a:not(.nav-availability) { transition: color .2s ease; }
 .nav-links > a:not(.nav-availability):hover, .nav-links > a:not(.nav-availability):focus-visible { color: var(--color-primary); }
@@ -171,7 +171,6 @@ button { color: inherit; }
 .site-footer { background: #00003a; color: #c0c5d1; }
 .footer-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .footer-wordmark { color: #fff; }
-.footer-wordmark .wordmark-mark { background: var(--color-accent); color: var(--color-deep); }
 .footer-inner p, .back-top { margin: 0; font-size: .63rem; }
 .back-top { display: inline-flex; align-items: center; gap: .45rem; }
 .back-top-icon { width: .85rem; height: .85rem; transition: transform .2s ease; }
@@ -469,7 +468,6 @@ button { color: inherit; }
 [data-theme="dark"] .learning-grid article { border-color: var(--color-line); }
 [data-theme="dark"] .case-next { border-color: var(--color-line); }
 [data-theme="dark"] .site-footer { background: #08091d; }
-[data-theme="dark"] .footer-wordmark .wordmark-mark { color: var(--color-deep); }
 [data-theme="dark"] .theme-toggle:hover { background: #292b35; }
 
 @media (prefers-reduced-motion: reduce) {
