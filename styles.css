@@ -231,10 +231,6 @@ button { color: inherit; }
 .journey-branches { display: grid; flex: 1.2 1 0; gap: .55rem; }
 .journey-branches .journey-node { min-height: 0; }
 .journey-caption { margin: 1rem 0 0; color: #c3c4d2; font-size: .61rem; line-height: 1.7; }
-.artifact-placeholder { display: flex; align-items: center; gap: .9rem; margin-top: 1.3rem; padding: 1.1rem; border: 1px dashed #c9c8c1; border-radius: 8px; }
-.artifact-placeholder > span { color: var(--brainbud-purple); font-size: 1.25rem; }
-.artifact-placeholder strong { color: var(--color-primary); font-size: .7rem; }
-.artifact-placeholder p { margin: .25rem 0 0; color: var(--color-muted); font-size: .63rem; }
 .palette-row { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .8rem; margin: 2rem 0; }
 .palette-swatch { display: grid; gap: .45rem; }
 .palette-swatch > span { height: 78px; border: 1px solid rgba(0,0,0,.06); border-radius: 7px; background: var(--swatch); }
