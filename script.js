@@ -1,3 +1,24 @@
+const themeToggle = document.querySelector(".theme-toggle");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const savedTheme = localStorage.getItem("ayoade-theme");
+const initialTheme = savedTheme === "dark" ? "dark" : "light";
+
+const applyTheme = (theme) => {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  themeToggle?.setAttribute("aria-pressed", String(isDark));
+  themeToggle?.setAttribute("title", `Switch to ${isDark ? "light" : "dark"} mode`);
+  themeColorMeta?.setAttribute("content", isDark ? "#14151b" : "#faf9f6");
+};
+
+applyTheme(initialTheme);
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("ayoade-theme", nextTheme);
+  applyTheme(nextTheme);
+});
+
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#primary-nav");
 
