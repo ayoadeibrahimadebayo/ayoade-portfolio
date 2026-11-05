@@ -57,10 +57,14 @@ button { color: inherit; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 2rem; }
 .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .6rem; padding: .8rem 1.2rem; border: 1px solid transparent; border-radius: 99px; font-size: .76rem; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
-.action-mark, .project-image-icon { position: relative; display: inline-block; width: .78rem; height: .78rem; flex: 0 0 auto; border: 0; border-radius: 0; background: none; color: currentColor; opacity: .72; transition: transform .2s ease, opacity .2s ease; }
+.action-mark, .project-image-icon { position: relative; display: inline-block; width: .78rem; height: .78rem; flex: 0 0 auto; align-self: center; border: 0; border-radius: 0; background: none; color: currentColor; opacity: .72; vertical-align: -.08em; transition: opacity .2s ease; }
 .action-mark::before, .project-image-icon::before { position: absolute; top: .1rem; left: 50%; width: .34rem; height: .34rem; border-top: 1.4px solid currentColor; border-left: 1.4px solid currentColor; content: ""; transform: translateX(-50%) rotate(45deg); }
 .action-mark::after, .project-image-icon::after { position: absolute; top: .22rem; bottom: .02rem; left: 50%; width: 1.4px; background: currentColor; content: ""; transform: translateX(-50%); }
-.button:hover .action-mark, .button:focus-visible .action-mark, .project-link:hover .action-mark, .text-link:hover .action-mark, a:hover > .action-mark, .project-image-link:hover .project-image-icon, .project-image-link:focus-visible .project-image-icon { opacity: 1; transform: translateY(-2px); }
+.action-mark--right, .project-image-icon { transform: rotate(90deg); }
+.action-mark--up-right { transform: rotate(45deg); }
+.action-mark--down { transform: rotate(180deg); }
+.action-mark--left { transform: rotate(-90deg); }
+.button:hover .action-mark, .button:focus-visible .action-mark, .project-link:hover .action-mark, .text-link:hover .action-mark, a:hover > .action-mark, .project-image-link:hover .project-image-icon, .project-image-link:focus-visible .project-image-icon { opacity: 1; }
 .button-primary { background: var(--color-primary); color: #fff; box-shadow: 0 8px 18px rgba(0,0,82,.12); }
 .button-primary:hover { background: var(--color-primary-soft); box-shadow: 0 12px 25px rgba(0,0,82,.18); }
 .button-quiet { border-color: var(--color-line); background: transparent; color: var(--color-primary); }
