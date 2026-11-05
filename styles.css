@@ -146,6 +146,8 @@ button { color: inherit; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-accent); }
 .button-lime { margin-top: 1.4rem; background: var(--color-accent); color: var(--color-primary); }
 .button-lime:hover { background: #6de340; }
+.send-icon { width: 1rem; height: 1rem; flex: 0 0 auto; transition: transform .2s ease; }
+.button-lime:hover .send-icon, .button-lime:focus-visible .send-icon { transform: translate(1px,-1px); }
 .button:disabled { cursor: wait; opacity: .7; transform: none; }
 .form-status { min-height: 1.3em; margin: .9rem 0 0; color: #aeb8ca; font-size: .64rem; line-height: 1.5; }
 .form-status.is-error { color: #ffb6ad; }
