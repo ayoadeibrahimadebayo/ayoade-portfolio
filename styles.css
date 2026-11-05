@@ -3,6 +3,7 @@
   --color-primary: #000052;
   --color-primary-soft: #24246a;
   --color-deep: #000052;
+  --color-ink-navy: #17264f;
   --color-accent: #4dd21d;
   --color-background: #faf9f6;
   --color-surface: #fefefd;
@@ -152,7 +153,7 @@ button { color: inherit; }
 .contact-form input, .contact-form textarea { width: 100%; padding: .7rem 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.25); border-radius: 0; outline: 0; background: transparent; color: #fff; font-size: .75rem; resize: vertical; transition: border-color .2s ease; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #929ab0; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-accent); }
-.button-lime { margin-top: 1.4rem; background: var(--color-accent); color: var(--color-primary); }
+.button-lime { margin-top: 1.4rem; background: var(--color-accent); color: var(--color-ink-navy); }
 .button-lime:hover { background: #6de340; }
 .send-icon { width: 1rem; height: 1rem; flex: 0 0 auto; transition: transform .2s ease; }
 .button-lime:hover .send-icon, .button-lime:focus-visible .send-icon { transform: translate(1px,-1px); }
