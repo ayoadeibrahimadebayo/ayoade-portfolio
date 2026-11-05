@@ -57,8 +57,10 @@ button { color: inherit; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 2rem; }
 .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .6rem; padding: .8rem 1.2rem; border: 1px solid transparent; border-radius: 99px; font-size: .76rem; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
-.action-mark { display: inline-block; width: .42rem; height: .42rem; flex: 0 0 auto; border: 1px solid currentColor; border-radius: 50%; opacity: .7; transition: background .2s ease, opacity .2s ease; }
-.button:hover .action-mark, .button:focus-visible .action-mark, .project-link:hover .action-mark, .text-link:hover .action-mark, a:hover > .action-mark { background: currentColor; opacity: 1; }
+.action-mark, .project-image-icon { position: relative; display: inline-block; width: .78rem; height: .78rem; flex: 0 0 auto; border: 0; border-radius: 0; background: none; color: currentColor; opacity: .72; transition: transform .2s ease, opacity .2s ease; }
+.action-mark::before, .project-image-icon::before { position: absolute; top: .1rem; left: 50%; width: .34rem; height: .34rem; border-top: 1.4px solid currentColor; border-left: 1.4px solid currentColor; content: ""; transform: translateX(-50%) rotate(45deg); }
+.action-mark::after, .project-image-icon::after { position: absolute; top: .22rem; bottom: .02rem; left: 50%; width: 1.4px; background: currentColor; content: ""; transform: translateX(-50%); }
+.button:hover .action-mark, .button:focus-visible .action-mark, .project-link:hover .action-mark, .text-link:hover .action-mark, a:hover > .action-mark, .project-image-link:hover .project-image-icon, .project-image-link:focus-visible .project-image-icon { opacity: 1; transform: translateY(-2px); }
 .button-primary { background: var(--color-primary); color: #fff; box-shadow: 0 8px 18px rgba(0,0,82,.12); }
 .button-primary:hover { background: var(--color-primary-soft); box-shadow: 0 12px 25px rgba(0,0,82,.18); }
 .button-quiet { border-color: var(--color-line); background: transparent; color: var(--color-primary); }
@@ -84,7 +86,7 @@ button { color: inherit; }
 .project-image-link { position: relative; display: block; min-width: 0; aspect-ratio: 1.38; overflow: hidden; border-radius: 12px; background: #07060e; isolation: isolate; }
 .project-image-link img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .35s ease; }
 .project-image-overlay { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: 3.5rem 1.15rem 1.15rem; background: linear-gradient(transparent,rgba(0,0,30,.82)); color: #fff; font-size: .74rem; font-weight: 600; opacity: 0; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; }
-.project-image-icon { display: block; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--color-accent); }
+.project-image-icon { color: var(--color-accent); }
 .image-index { position: absolute; top: 1rem; left: 1rem; padding: .45rem .6rem; border: 1px solid rgba(255,255,255,.35); border-radius: 99px; background: rgba(0,0,25,.35); color: #fff; font-size: .55rem; letter-spacing: .1em; }
 .project-image-link:hover img, .project-image-link:focus-visible img { filter: brightness(.84); transform: scale(1.035); }
 .project-image-link:hover .project-image-overlay, .project-image-link:focus-visible .project-image-overlay { opacity: 1; transform: translateY(0); }
