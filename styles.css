@@ -157,7 +157,7 @@ button { color: inherit; }
 .form-heading p { margin: 0; color: #fff; font-size: .77rem; font-weight: 500; }
 .contact-form label { display: block; margin: 1.15rem 0 .4rem; color: #e3e5ec; font-size: .64rem; }
 .contact-form input, .contact-form textarea { width: 100%; padding: .7rem 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.25); border-radius: 0; outline: 0; background: transparent; color: #fff; font-size: .75rem; resize: vertical; transition: border-color .2s ease; }
-.contact-form textarea { height: 50px; padding-block: .45rem; line-height: 1.35; }
+.contact-form textarea { height: 50px; padding: .7rem 0 0; line-height: 1.35; resize: none; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #929ab0; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-accent); }
 .button-lime { margin-top: 1.4rem; background: var(--color-accent); color: var(--color-ink-navy); }
