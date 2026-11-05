@@ -165,6 +165,9 @@ button { color: inherit; }
 .footer-wordmark { color: #fff; }
 .footer-wordmark .wordmark-mark { background: var(--color-accent); color: var(--color-deep); }
 .footer-inner p, .back-top { margin: 0; font-size: .63rem; }
+.back-top { display: inline-flex; align-items: center; gap: .45rem; }
+.back-top-icon { width: .85rem; height: .85rem; transition: transform .2s ease; }
+.back-top:hover .back-top-icon, .back-top:focus-visible .back-top-icon { transform: translateY(-2px); }
 .footer-inner p span { color: var(--color-accent); }
 
 .case-study-page { --case-gutter: clamp(1.25rem, 7vw, 7rem); }
