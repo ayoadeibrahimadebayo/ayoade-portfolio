@@ -190,6 +190,10 @@ body { background: radial-gradient(circle at top, rgba(77,76,191,.06), transpare
 .footer-inner p span { color: var(--color-accent); }
 
 .case-study-page { --case-gutter: clamp(1.25rem, 7vw, 7rem); }
+.talent-sphere-page { --brainbud-purple: #4dd21d; --talent-navy: #000052; }
+.talent-sphere-page .case-title-period { color: var(--talent-navy); }
+.talent-sphere-page .evidence-note { border-left-color: var(--talent-navy); background: #edf4ed; }
+.talent-sphere-page .case-hero-art:focus-visible { outline-color: #4dd21d; }
 .case-study-page .nav-shell, .case-study-page .case-hero, .case-study-page .case-next { width: min(1280px,calc(100% - var(--case-gutter) * 2)); }
 .case-hero { padding-top: 2.5rem; }
 .back-link { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 2.3rem; color: var(--color-muted); font-size: .68rem; transition: color .2s ease,gap .2s ease; }
