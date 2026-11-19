@@ -47,10 +47,13 @@ if (yearElement) {
 }
 
 const revealElements = document.querySelectorAll(
-  ".section-heading, .about-intro, .detail-block, .skill-category, .contact-copy, .contact-form",
+  ".section-heading, .work-heading > p, .project-card, .about-intro, .detail-block, .skill-category, .contact-copy, .contact-form, .case-section-heading, .case-text-grid, .direction-grid article, .process-list li, .journey-map, .feature-feature, .tutor-step, .feature-grid article, .signup-flow-figure, .learning-grid article, .case-next",
 );
 
-if ("IntersectionObserver" in window) {
+if (
+  "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
